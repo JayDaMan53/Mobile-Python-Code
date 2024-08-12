@@ -19,6 +19,7 @@ def command():
     else:
         return "Unknown command", 400
 
+
+print("Verson 4")
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-    print("Verson 3")
