@@ -4,7 +4,10 @@ import os
 app = Flask(__name__)
 
 def vibrate_phone(duration_ms=500):
+    os.system('termux-wake-lock')
     os.system(f'termux-vibrate -d {duration_ms}')
+    os.system('termux-wake-unlock')  # Optional: to release the wake lock after the vibration
+
 
 @app.route('/command', methods=['POST'])
 def command():
